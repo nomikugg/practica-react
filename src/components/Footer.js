@@ -1,5 +1,4 @@
-import React, {Component} from "react";
-
+import React from "react";
 
 // class Footer extends Component{
 //     render(){
@@ -16,10 +15,8 @@ import React, {Component} from "react";
 //     </>
 // }
 
-
-
 //Otra forma de tambien hacer es directo
-const Footer=props=><p>Funcion Flecha: {props.message}</p>//Con arrow function
+const Footer = props => <p>Funcion Flecha: {props.message}</p>; //Con arrow function
 //return implicito
 
-export default Footer
+export default Footer;
