@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Propiedades from "./components/Propiedades";
 import Estado from "./components/Estado";
 import RenderizadoCondicional from "./components/RenderizadoCondicional";
+import RenderizadoElementos from "./components/RenderizadoElementos";
+import { EventosES6, EventosES7 } from "./components/Eventos";
 
 function App() {
   return (
@@ -48,6 +50,16 @@ function App() {
           <hr />
 
           <RenderizadoCondicional></RenderizadoCondicional>
+
+          <hr />
+
+          <RenderizadoElementos />
+
+          <hr />
+
+          <EventosES6></EventosES6>
+          <hr />
+          <EventosES7></EventosES7>
         </section>
       </header>
     </div>
