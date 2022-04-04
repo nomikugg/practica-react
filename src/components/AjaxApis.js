@@ -24,7 +24,7 @@ export default class AjaxApis extends Component {
           fetch(element.url)
             .then(dataPoke => dataPoke.json())
             .then(dataJson => {
-              console.log(dataJson);
+              // console.log(dataJson);
               let pokemon = {
                 id: dataJson.id,
                 name: dataJson.name,
