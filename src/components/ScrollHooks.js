@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 export default function ScrollHooks() {
   const [scrollY, setscrollY] = useState(0);
+
+  //Podemos usar useEffect cuantas veces queramos
   useEffect(() => {
     console.log("Fase de montaje");
 
@@ -10,6 +12,10 @@ export default function ScrollHooks() {
     };
     window.addEventListener("scroll", detectarScroll);
   }, []);
+
+  useEffect(() => {
+    console.log("Fase de actualizacion");
+  });
   //Poner un array vacio para no se ejecute el useEffect infinitamente
   return (
     <>
