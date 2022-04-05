@@ -5,18 +5,31 @@ export default function ScrollHooks() {
 
   //Podemos usar useEffect cuantas veces queramos
   useEffect(() => {
-    console.log("Fase de montaje");
+    console.log("Moviendo el scroll");
 
     const detectarScroll = () => {
       setscrollY(window.scrollY);
     };
     window.addEventListener("scroll", detectarScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", detectarScroll);
+    };
+  }, [scrollY]);
+  //Poner la variable como segundo parametro. update
+
+  useEffect(() => {
+    console.log("Fase de montaje");
+  }, []); //Se ejecuta una sola vez, el montaje
 
   useEffect(() => {
     console.log("Fase de actualizacion");
   });
-  //Poner un array vacio para no se ejecute el useEffect infinitamente
+  useEffect(() => {
+    return () => {
+      console.log("Fase de desmontaje");
+    };
+  });
+  //solamente cuando se hace cambio, es el equivalente a COMPONENTDIDUPDATE()
   return (
     <>
       <h2>Hooks, useEffect y el ciclo de vida</h2>
