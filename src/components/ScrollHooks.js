@@ -9,7 +9,8 @@ export default function ScrollHooks() {
       setscrollY(window.scrollY);
     };
     window.addEventListener("scroll", detectarScroll);
-  });
+  }, []);
+  //Poner un array vacio para no se ejecute el useEffect infinitamente
   return (
     <>
       <h2>Hooks, useEffect y el ciclo de vida</h2>
