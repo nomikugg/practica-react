@@ -13,29 +13,7 @@ export default class AjaxApis extends Component {
     pokemons: [],
   };
 
-  componentDidMount() {
-    let url = "https://pokeapi.co/api/v2/pokemon/";
-    fetch(url)
-      .then(res => res.json())
-      .then(json => {
-        //console.log(json);
-        // console.log(json.results);
-        json.results.forEach(element => {
-          fetch(element.url)
-            .then(dataPoke => dataPoke.json())
-            .then(dataJson => {
-              // console.log(dataJson);
-              let pokemon = {
-                id: dataJson.id,
-                name: dataJson.name,
-                img: dataJson.sprites.front_default,
-              };
-              let pokemons = [...this.state.pokemons, pokemon];
-              this.setState({ pokemons });
-            });
-        });
-      });
-  }
+  componentDidMount() {}
   render() {
     return (
       <>
